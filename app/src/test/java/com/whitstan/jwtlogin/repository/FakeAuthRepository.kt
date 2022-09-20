@@ -1,5 +1,6 @@
 package com.whitstan.jwtlogin.repository
 
+import com.whitstan.jwtlogin.constants.HttpCodes.UNAUTHORIZED
 import com.whitstan.jwtlogin.domain.AuthResult
 import com.whitstan.jwtlogin.network.AuthApi
 import retrofit2.HttpException
@@ -17,7 +18,7 @@ class FakeAuthRepository(private val api: AuthApi): AuthRepository {
             AuthResult.Authorized(response.access_token)
         }
         catch (exception: HttpException) {
-            if (exception.code() == 401) AuthResult.Unauthorized()
+            if (exception.code() == UNAUTHORIZED) AuthResult.Unauthorized()
             else {
                 AuthResult.UnknownError()
             }
@@ -36,7 +37,7 @@ class FakeAuthRepository(private val api: AuthApi): AuthRepository {
             AuthResult.Authorized(response.access_token)
         }
         catch (e: HttpException) {
-            if (e.code() == 401) AuthResult.RefreshFailed()
+            if (e.code() == UNAUTHORIZED) AuthResult.RefreshFailed()
             else AuthResult.UnknownError()
         }
         catch (exception: UnknownHostException) {

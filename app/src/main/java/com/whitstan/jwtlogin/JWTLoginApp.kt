@@ -1,6 +1,7 @@
 package com.whitstan.jwtlogin
 
 import android.app.Application
+import com.whitstan.jwtlogin.constants.HttpCodes.OK
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,7 +29,7 @@ class JWTLoginApp : Application(){
             mockWebServer.dispatcher = object : Dispatcher() {
                 override fun dispatch(request: RecordedRequest): MockResponse {
                     return MockResponse()
-                        .setResponseCode(200)
+                        .setResponseCode(OK)
                         .setBodyDelay(3000, TimeUnit.MILLISECONDS)
                         .setBody(mockJson)
                 }
