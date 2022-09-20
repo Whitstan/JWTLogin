@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">JWTLogin</string>
+
+    <string name="placeholder_username">Username</string>
+    <string name="placeholder_password">Username</string>
+
+    <string name="description_hidePassword">Hide password</string>
+    <string name="description_showPassword">Show password</string>
+
+    <string name="button_login">Login</string>
+
+    <string name="error_notAvailable">N/A</string>
+    <string name="error_unauthorized">You are not authorized</string>
+    <string name="error_failedToExtendLogin">Failed to extend login state</string>
+    <string name="error_noInternet">Connection broken. Verify that you are connected to the internet.</string>
+    <string name="error_unknown">An unknown error occurred</string>
+
+    <string name="format_fullName">Full name: %1$s</string>
+    <string name="format_role">Role: %1$s</string>
+</resources>
